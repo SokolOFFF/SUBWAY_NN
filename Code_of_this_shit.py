@@ -5,16 +5,152 @@ root.title("СОКОЛОВ МЕТРО. Навигация по Нижегоро�
 root.geometry('1920x1080')
 
 
+
+station_name = [""] * 32
+station_name[1]="Сормовская"
+station_name[2]="Спортивная"
+station_name[3]="Калининская"
+station_name[4]="Куйбышевская"
+station_name[5]="Канавинская"
+station_name[6]="Московская"
+station_name[7]="Горьковская"
+station_name[8]="Свердловская"
+station_name[9]="Площать Свободы"
+station_name[10]="Республиканская"
+station_name[11]="Советская"
+station_name[12]="Мещерская"
+station_name[13]="Чкаловская"
+station_name[14]="Ленинская"
+station_name[15]="Заречная"
+station_name[16]="Двигатель Революции"
+station_name[17]="Пролетарская"
+station_name[18]="Северная"
+station_name[19]="Комсомольская"
+station_name[20]="Красные Зори"
+station_name[21]="Индустриальная"
+station_name[22]="Первомайская"
+station_name[23]="Дзержинская"
+station_name[24]="Магистральная"
+station_name[25]="Бауманская"
+station_name[26]="Сельхозинститут"
+station_name[27]="Щербинская"
+station_name[28]="Мыза"
+station_name[29]="Приокская"
+station_name[30]="Дворец Спорта"
+station_name[31]="Университет"
+
+
+ver = [[0, 156,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [156, 0, 92,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,104,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, 92, 0,106,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,106,0, 92,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,92,0,111,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,111,0,372,-1,-1,-1,-1,228,92,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,372,0,116,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,110],
+       [-1, -1,-1,-1,-1,-1,116,0,134,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,134,0,96,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,96,0,141,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,269,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,141,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,228,-1,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,92,-1,-1,-1,-1,-1,-1,0,92,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,92,0,121,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,121,0,94,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,94,0,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,100,0,80,-1,-1,-1,-1,-1,114,127,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,80,0,86,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,86,0,-1,-1,-1,-1,-1,-1,-1,304,-1,-1,-1,-1],
+       [-1, 104,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,140,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,140,0,120,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,120,0,104,-1,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,104,0,107,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,114,-1,-1,-1,-1,-1,107,0,-1,-1,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,127,-1,-1,-1,-1,-1,-1,-1,0,222,-1,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,222,0,106,136,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,304,-1,-1,-1,-1,-1,-1,106,0,-1,-1,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,136,-1,0,107,-1,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,107,0,192,-1],
+       [-1, -1,-1,-1,-1,-1,-1,-1,-1,269,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,192,0,100],
+       [-1, -1,-1,-1,-1,-1,110,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,100,0]]
+
+
+
 canvas=Canvas()
+
+canvas.create_text(105, 13, text="Сормовская",
+                 font="fangsongti  14")
+canvas.create_text(220, 110, text="Спортивная",
+                 font="fangsongti  14")
+canvas.create_text(290, 180, text="Калининская",
+                 font="fangsongti  14")
+canvas.create_text(350, 240, text="Куйбышевская",
+                 font="fangsongti  14")
+canvas.create_text(360, 360, text="Канавинская",
+                 font="fangsongti  14")
+canvas.create_text(530, 310, text="Московская",
+                 font="fangsongti  14")
+canvas.create_text(700, 330, text="Горьковская",
+                 font="fangsongti  14")
+canvas.create_text(810, 270, text="Свердловская",
+                 font="fangsongti  14")
+canvas.create_text(1000, 350, text="Площадь\nСвободы",
+                 font="fangsongti  14", justify = "left")
+canvas.create_text(870, 440, text="Республиканская",
+                 font="fangsongti  14")
+canvas.create_text(1000, 566, text="Советская",
+                 font="fangsongti  14")
+canvas.create_text(485, 196, text="Мещерская",
+                 font="fangsongti  14")
+canvas.create_text(520, 440, text="Чкаловская",
+                 font="fangsongti  14")
+canvas.create_text(490, 535, text="Ленинская",
+                 font="fangsongti  14")
+canvas.create_text(465, 615, text="Заречная",
+                 font="fangsongti  14")
+canvas.create_text(430, 690, text="  Двигатель \n Революции",
+                 font="fangsongti  14")
+canvas.create_text(390, 760, text="Пролетарская",
+                 font="fangsongti  14")
+canvas.create_text(205, 820, text="Северная",
+                 font="fangsongti  14")
+canvas.create_text(125, 895, text="Комсомольская",
+                 font="fangsongti  14")
+canvas.create_text(189, 240, text="Красные \n Зори",
+                 font="fangsongti  14")
+canvas.create_text(230, 390, text="Индустриальная",
+                 font="fangsongti  14")
+canvas.create_text(230, 490, text="Первомайская",
+                 font="fangsongti  14")
+canvas.create_text(260, 590, text="Дзержинская",
+                 font="fangsongti  14")
+canvas.create_text(280, 655, text="Магистральная",
+                 font="fangsongti  14")
+canvas.create_text(460, 825, text="Бауманская",
+                 font="fangsongti  14")
+canvas.create_text(720, 890, text="Сельхозинститут",
+                 font="fangsongti  14")
+canvas.create_text(620, 970, text="Щербинская",
+                 font="fangsongti  14")
+canvas.create_text(705, 790, text="Мыза",
+                 font="fangsongti  14")
+canvas.create_text(765, 680, text="Приокское",
+                 font="fangsongti  14")
+canvas.create_text(785, 610, text="Дворец \n спорта",
+                 font="fangsongti  14")
+canvas.create_text(795, 490, text="Университет",
+                 font="fangsongti  14")
+
+
+
+
 
 canvas.create_line(1500, 0, 1500, 1080, fill="black", width=5)
 canvas.create_line(1100, 0, 1100, 1080, fill="black", width=5)
 
-label1 = Label (root, text = "", bg = "lightblue", width = 31, font = "Arial 15")
+label1 = Label (root, text = "", bg = "lightblue", width = 31, font = "Arial 15" , fg = "navy")
 label1.place(x = 1530, y = 100)
 
-label2 = Label (root, text = "", width = 35, height = 53, font = "Arial 10")
-label2.place (x = 1150, y = 100)
+label2 = Label (root, text = "", width = 20,  font = "Arial 20", bg = "lightblue", fg = "navy")
+label2.place (x = 1140, y = 100)
 
 #LINES BETWEEN STATIONS
 
@@ -30,7 +166,7 @@ class Lines:
         canvas.create_line(self.x1, self.y1, self.x2, self.y2, fill=self.color, width=self.wid)
 
 
-lines = [[None for i in range(50)] for j in range (50)]
+lines = [[None for i in range(50)] for j in range(50)]
 
 #blue line
 lines[1][2] = Lines(20, 20, 140, 120, "blue", 13)
@@ -79,10 +215,10 @@ lines[12][6] = Lines (456, 340, 407, 200, "palevioletred", 13)
 lines[12][6].draw()
 lines[6][12] = Lines (456, 340, 407, 200, "palevioletred", 13)
 lines[6][12].draw()
-lines[12][13] = Lines (463, 340, 445, 430, "palevioletred", 13)
-lines[12][13].draw()
-lines[13][12] = Lines (463, 340, 445, 430, "palevioletred", 13)
-lines[13][12].draw()
+lines[6][13] = Lines (463, 340, 445, 430, "palevioletred", 13)
+lines[6][13].draw()
+lines[13][6] = Lines (463, 340, 445, 430, "palevioletred", 13)
+lines[13][6].draw()
 lines[13][14] = Lines (421, 520, 445, 430, "palevioletred", 13)
 lines[13][14].draw()
 lines[14][13] = Lines (421, 520, 445, 430, "palevioletred", 13)
@@ -137,10 +273,10 @@ lines[31][7] = Lines (710, 485, 710, 370, "mediumseagreen", 13)
 lines[31][7].draw()
 lines[7][31] = Lines (710, 485, 710, 370, "mediumseagreen", 13)
 lines[7][31].draw()
-lines[31][10] = Lines(705,595,960,465,  "mediumseagreen", 13)
-lines[31][10].draw()
-lines[10][31] = Lines(705,595,960,465,  "mediumseagreen", 13)
-lines[10][31].draw()
+lines[30][10] = Lines(705,595,960,465,  "mediumseagreen", 13)
+lines[30][10].draw()
+lines[10][30] = Lines(705,595,960,465,  "mediumseagreen", 13)
+lines[10][30].draw()
 
 #black line
 lines[2][20] = Lines(152,120,123,220,  "gray", 13)
@@ -176,13 +312,13 @@ lines[26][25].draw()
 lines[25][26] = Lines(600,890,380,860,  "gray", 13)
 lines[25][26].draw()
 
-qui = Button(canvas, text="QUIT", width = 20, bg = "tan", height = 3)
+Quit = Button(canvas, text="QUIT", width = 20, bg = "tan", height = 3)
 
 def exi(event):
     sys.exit()
 
-qui.bind('<Button-1>', exi)
-qui.place(x=1650, y=900)
+Quit.bind('<Button-1>', exi)
+Quit.place(x=1650, y=900)
 
 
 count_of_flags=0
@@ -275,6 +411,78 @@ s[28] = Best_Button (640, 770, 0, "white", "mediumseagreen")
 s[29] = Best_Button (680, 670, 0, "white", "mediumseagreen")
 s[30] = Best_Button (705, 580, 0, "blue", "mediumseagreen")
 s[31] = Best_Button (700, 485, 0, "white", "mediumseagreen")
+
+Start = Button(canvas, text="START", width = 20, bg = "tan", height = 3, activebackground = "tan")
+
+def start(event):
+    global count_of_flags
+    global ver
+    pp = []
+    report = [0]*31
+    length = [[1000000 for i in range(2)] for j in range(31)]
+    for i in range(31):
+        length[i][1]=-1
+    if count_of_flags < 2:
+        label1['text']="I can't do it"
+        return 0
+    if count_of_flags == 2:
+        label1['text']=""
+        for i in range(32):
+            if s[i].f==1:
+                pp.append(i)
+        #print(*pp)
+        be = pp[0]-1
+        en = pp[1]-1
+        length[be][0]=0
+        length[be][1]=be
+        report[be]=1
+        for i in range(31):
+            if ver[be][i]>0:
+                length[i][0]=min(length[i][0], length[be][0]+ver[be][i])
+                length[i][1]=be
+
+        while (1!=0):
+            minn=10000000
+            v = -12312
+            for i in range(31):
+                if length[i][0]<minn and report[i]==0:
+                    minn = length[i][0]
+                    v = i
+            if minn == 10000000:
+                break
+
+            for i in range(31):
+                if report[i]==0 and i != v and ver[v][i] > 0:
+                    if length[i][0] > length[v][0]+ver[v][i]:
+                        length[i][0] = length[v][0]+ver[v][i]
+                        length[i][1] = v
+            report[v]=1
+
+        q=[]
+        q.append(en+1)
+        p = en
+        while length[p][1] != be:
+            q.append(length[p][1]+1)
+            p=length[p][1]
+        q.append(be+1)
+        for i in range(len(q)-1):
+            lines[q[i]][q[i+1]].__init__(lines[q[i]][q[i+1]].x1, lines[q[i]][q[i+1]].y1, lines[q[i]][q[i+1]].x2, lines[q[i]][q[i+1]].y2, "orange", 13)
+            lines[q[i]][q[i + 1]].draw()
+        for i in q:
+            s[i].__init__(s[i].x, s[i].y, s[i].f, "orange", "black")
+        def show(event):
+            label2["text"]=""
+            for i in q:
+                label2["text"] += station_name[i]
+                label2["text"] += "\n"
+        show_name = Button(canvas, text="SHOW", width = 20, bg = "tan", height = 3, activebackground = "tan")
+        show_name.bind('<Button-1>', show)
+        show_name.place(x = 1650, y = 760)
+
+
+
+Start.bind('<Button-1>', start)
+Start.place(x=1650, y = 830)
 
 canvas.pack(fill=BOTH, expand=1)
 root.mainloop()
